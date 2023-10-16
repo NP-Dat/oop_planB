@@ -19,13 +19,10 @@ public class Game implements Runnable {
         initClasses();
         gamePanel = new GamePanel(this);
         gameWindow = new GameWindow(gamePanel);
-        gamePanel.requestFocus();
-
-
+//        gamePanel.setFocusable(true);  this method to make sure it focus
+//        gamePanel.requestFocus();        this method sometimes does not work in right way in Window
 
         startGameLoop();
-
-
     }
 
     private void initClasses() {

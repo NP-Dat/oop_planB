@@ -21,10 +21,17 @@ public class GamePanel extends JPanel {
     private Game game;
 
     public GamePanel(Game game) {
+
+        super(); // JPanel calls paintComponent
+
+        this.setFocusable(true);
+        this.requestFocus();
+
+        this.game = game;
+
         keyboardInputs = new KeyboardInputs(this);
         mouseInputs = new MouseInputs(this);
 
-        this.game = game;
 
         setPanelSize();
         addKeyListener(keyboardInputs);
